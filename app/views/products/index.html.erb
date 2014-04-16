@@ -1,11 +1,20 @@
-<h1>Shopping Students App</h1>
-
 <% @current = 0 %>
-<% 5.times do |current| %>
-<p>Retail Price: <%= @product.retail_price(@current) %> </p>
-<p>Student Price: <%= @product.student_price(@current) %> </p>
-<p><%= @product.product_title(@current) %> </p>
-<p><% @current += 1 %> </p>
-<p><img src ="<%= @product.product_image(@current) %>" /></p>
+
+
+<div class="row">
+
+      <% 15.times do |current| %>
+  <div class="col-xs-6 col-sm-4" style="border: 2px solid black">
+
+    <p>Retail Price: <%= @product.retail_price(@current) %></p>
+    <p>Student Price: <%= @product.student_price(@current) %></p>
+    <p><%= @product.product_title(@current) %> </p>
+
+    <p><img src ="<%= @product.product_image(@current) %>" /></p>
+  </div>
+
+
+<% @current += 1 %>
 <% end %>
+</div>
 

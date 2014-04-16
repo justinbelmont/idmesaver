@@ -31,8 +31,11 @@ def student_price(item)
   number_to_currency(@student_price.to_i)
 end
 
-def saved
-  you_save = @price_as_num * CONVERSE_DISCOUNT
+def saved(item)
+  @retail_price = @data[item]["mens-shoes-prices"].gsub(/[^\d\.]/, '').to_i
+  @student_price = @retail_price * (1 - CONVERSE_DISCOUNT)
+  @saved = @retail_price - @student_price
+  number_to_currency(@saved.to_i)
 end
 
 end

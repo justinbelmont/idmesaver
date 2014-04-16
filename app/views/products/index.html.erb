@@ -8,9 +8,11 @@
 
     <p>Retail Price: <%= @product.retail_price(@current) %></p>
     <p>Student Price: <%= @product.student_price(@current) %></p>
-    <p><%= @product.product_title(@current) %> </p>
+    <p style="color:red"><i>You Save: <%= @product.saved(@current) %></i></p>
+    <p><b><%= @product.product_title(@current) %></b></p>
+    <p><a href="http://www.perk.la/collections/perkla/products/converse" target="_blank">Get the Deal!</a></p>
 
-    <p><img src ="<%= @product.product_image(@current) %>" /></p>
+    <p><a href="http://www.perk.la/collections/perkla/products/converse" target="_blank"><img src ="<%= @product.product_image(@current) %>" /></a></p>
   </div>
 
 

@@ -1,20 +1,24 @@
+
+
 <% @current = 0 %>
 
-<h2> Men's Converse: </h2>
-<div class="row">
-      <% 6.times do |current| %>
-  <div class="col-xs-6 col-sm-4" style="border: 2px solid black">
+<div class="conversem">
+  <h2> Men's Converse: </h2>
+  <div class="row">
+        <% 6.times do |current| %>
+    <div class="col-xs-6 col-sm-4" style="border: 2px solid black">
 
-    <p>Retail Price: <%= @product.retail_price(@current) %></p>
-    <p>Student Price: <%= @product.student_price(@current) %></p>
-    <p style="color:red"><i>You Save: <%= @product.saved(@current) %></i></p>
-    <p><b><%= @product.product_title(@current) %></b></p>
-    <p><a href="http://www.perk.la/collections/perkla/products/converse" target="_blank">Get the Deal!</a></p>
+      <p>Retail Price: <%= @product.retail_price(@current) %></p>
+      <p>Student Price: <%= @product.student_price(@current) %></p>
+      <p style="color:red"><i>You Save: <%= @product.saved(@current) %></i></p>
+      <p><b><%= @product.product_title(@current) %></b></p>
+      <p><a href="http://www.perk.la/collections/perkla/products/converse" target="_blank">Get the Deal!</a></p>
 
-    <p><a href="http://www.perk.la/collections/perkla/products/converse" target="_blank"><img src ="<%= @product.product_image(@current) %>" /></a></p>
+      <p><a href="http://www.perk.la/collections/perkla/products/converse" target="_blank"><img src ="<%= @product.product_image(@current) %>" /></a></p>
+    </div>
+    <% @current += 1 %>
+  <% end %>
   </div>
-  <% @current += 1 %>
-<% end %>
 </div>
 
 <div>
@@ -71,7 +75,7 @@
     <p>Student Price: <%= @product.theory_m_student_price(@current) %></p>
     <p style="color:red"><i>You Save: <%= @product.theory_m_saved(@current) %></i></p>
     <p><b><%= @product.theory_m_product_title(@current) %></b></p>
-    <p><a href="http://www.perk.la/collections/perkla/products/converse" target="_blank">Get the Deal!</a></p>
+    <p id="alertlink"><a href="http://www.perk.la/collections/perkla/products/converse" target="_blank">Get the Deal!</a></p>
 
     <p><a href="http://www.perk.la/collections/perkla/products/converse" target="_blank"><img src ="<%= @product.theory_m_product_image(@current) %>" /></a></p>
   </div>

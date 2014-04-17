@@ -8,9 +8,11 @@ require 'rest_client'
 CONVERSE_DISCOUNT = 0.20
 
 def initialize
-  response = RestClient.get 'http://www.kimonolabs.com/api/6wl3jrra?apikey=85bcefb6f51d73a5223de8528c4fb2dc'
-  @parsed_response = JSON.parse(response)
-  @data = @parsed_response["results"]["collection1"]
+  conversemen = RestClient.get 'http://www.kimonolabs.com/api/6wl3jrra?apikey=85bcefb6f51d73a5223de8528c4fb2dc'
+  conversewomen = RestClient.get 'http://www.kimonolabs.com/api/d5zydwiu?apikey=85bcefb6f51d73a5223de8528c4fb2dc'
+  @parsed_conversemen = JSON.parse(conversemen)
+  
+  @data = @parsed_conversemen["results"]["collection1"]
 end
 
 def retail_price(item)

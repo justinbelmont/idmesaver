@@ -1,8 +1,8 @@
 $(document).ready(function(){
 
 $(function(){ 
-$(".mens").hide();
-$(".womens").hide();
+  $(".mens").hide();
+  $(".womens").hide();
 });
 
  $(".mennav").children("button").click(function(){

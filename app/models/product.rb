@@ -115,7 +115,8 @@ end
 # MEN'S THEORY
 
 def theory_m_retail_price(item)
-  @theory_m[item]["theory-men-price"]
+  retail_price = @theory_m[item]["theory-men-price"].gsub(/[^\d\.]/, '').to_i
+  number_to_currency(retail_price.to_i)
 end
 
 def theory_m_product_image(item)
@@ -123,7 +124,7 @@ def theory_m_product_image(item)
 end
 
 def theory_m_product_title(item)
-  @theory_m[item]["theory-men-title"]["text"].truncate(30)
+  @theory_m[item]["theory-men-title"]["text"].truncate(45)
 end
 
 def theory_m_student_price(item)
@@ -144,7 +145,8 @@ end
 
 
 def theory_w_retail_price(item)
-  @theory_w[item]["theory-women-prices"]
+  retail_price = @theory_w[item]["theory-women-prices"].gsub(/[^\d\.]/, '').to_i
+  number_to_currency(retail_price.to_i)
 end
 
 def theory_w_product_image(item)
@@ -152,7 +154,7 @@ def theory_w_product_image(item)
 end
 
 def theory_w_product_title(item)
-  @theory_w[item]["theory-women-titles"]["text"].truncate(35)
+  @theory_w[item]["theory-women-titles"]["text"].truncate(45)
 end
 
 def theory_w_student_price(item)

@@ -60,7 +60,8 @@ end
 # MENS CONVERSE
 
 def retail_price(item)
-  @data[item]["mens-shoes-prices"]
+  retail_price = @data[item]["mens-shoes-prices"].gsub(/[^\d\.]/, '').to_i
+  number_to_currency(retail_price.to_i, :precision => 0)
 end
 
 def product_image(item)
@@ -74,21 +75,22 @@ end
 def student_price(item)
   retail_price = @data[item]["mens-shoes-prices"].gsub(/[^\d\.]/, '').to_i
   student_price = retail_price * (1 - CONVERSE_DISCOUNT)
-  number_to_currency(student_price.to_i)
+  number_to_currency(student_price.to_i, :precision => 0)
 end
 
 def saved(item)
   retail_price = @data[item]["mens-shoes-prices"].gsub(/[^\d\.]/, '').to_i
   student_price = retail_price * (1 - CONVERSE_DISCOUNT)
   saved = retail_price - student_price
-  number_to_currency(saved.to_i)
+  number_to_currency(saved.to_i, :precision => 0)
 end
 
 
 # WOMENS CONVERSE
 
 def converse_w_retail_price(item)
-  @dataw[item]["sneakers-prices"]
+  retail_price = @dataw[item]["sneakers-prices"].gsub(/[^\d\.]/, '').to_i
+  number_to_currency(retail_price.to_i, :precision => 0)
 end
 
 def converse_w_product_image(item)
@@ -102,21 +104,21 @@ end
 def converse_w_student_price(item)
   retail_price = @dataw[item]["sneakers-prices"].gsub(/[^\d\.]/, '').to_i
   student_price = retail_price * (1 - CONVERSE_DISCOUNT)
-  number_to_currency(student_price.to_i)
+  number_to_currency(student_price.to_i, :precision => 0)
 end
 
 def converse_w_saved(item)
   retail_price = @dataw[item]["sneakers-prices"].gsub(/[^\d\.]/, '').to_i
   student_price = retail_price * (1 - CONVERSE_DISCOUNT)
   saved = retail_price - student_price
-  number_to_currency(saved.to_i)
+  number_to_currency(saved.to_i, :precision => 0)
 end
 
 # MEN'S THEORY
 
 def theory_m_retail_price(item)
   retail_price = @theory_m[item]["theory-men-price"].gsub(/[^\d\.]/, '').to_i
-  number_to_currency(retail_price.to_i)
+  number_to_currency(retail_price.to_i, :precision => 0)
 end
 
 def theory_m_product_image(item)
@@ -130,14 +132,14 @@ end
 def theory_m_student_price(item)
   retail_price = @theory_m[item]["theory-men-price"].gsub(/[^\d\.]/, '').to_i
   student_price = retail_price * (1 - THEORY_DISCOUNT)
-  number_to_currency(student_price.to_i)
+  number_to_currency(student_price.to_i, :precision => 0)
 end
 
 def theory_m_saved(item)
   retail_price = @theory_m[item]["theory-men-price"].gsub(/[^\d\.]/, '').to_i
   student_price = retail_price * (1 - THEORY_DISCOUNT)
   saved = retail_price - student_price
-  number_to_currency(saved.to_i)
+  number_to_currency(saved.to_i, :precision => 0)
 end
 
 
@@ -146,7 +148,7 @@ end
 
 def theory_w_retail_price(item)
   retail_price = @theory_w[item]["theory-women-prices"].gsub(/[^\d\.]/, '').to_i
-  number_to_currency(retail_price.to_i)
+  number_to_currency(retail_price.to_i, :precision => 0)
 end
 
 def theory_w_product_image(item)
@@ -160,20 +162,21 @@ end
 def theory_w_student_price(item)
   retail_price = @theory_w[item]["theory-women-prices"].gsub(/[^\d\.]/, '').to_i
   student_price = retail_price * (1 - THEORY_DISCOUNT)
-  number_to_currency(student_price.to_i)
+  number_to_currency(student_price.to_i, :precision => 0)
 end
 
 def theory_w_saved(item)
   retail_price = @theory_w[item]["theory-women-prices"].gsub(/[^\d\.]/, '').to_i
   student_price = retail_price * (1 - THEORY_DISCOUNT)
   saved = retail_price - student_price
-  number_to_currency(saved.to_i)
+  number_to_currency(saved.to_i, :precision => 0)
 end
 
 # MENS JCREW
 
 def jcrew_m_retail_price(item)
-  @jcrew_m["collection2"][item]["jcrew-mens-prices"]["text"]
+  retail_price = @jcrew_m["collection2"][item]["jcrew-mens-prices"]["text"].gsub(/[^\d\.]/, '').to_i
+  number_to_currency(retail_price.to_i, :precision => 0)
 end
 
 def jcrew_m_product_image(item)
@@ -187,20 +190,21 @@ end
 def jcrew_m_student_price(item)
   retail_price = @jcrew_m["collection2"][item]["jcrew-mens-prices"]["text"].gsub(/[^\d\.]/, '').to_i
   student_price = retail_price * (1 - JCREW_DISCOUNT)
-  number_to_currency(student_price.to_i)
+  number_to_currency(student_price.to_i, :precision => 0)
 end
 
 def jcrew_m_saved(item)
   retail_price = @jcrew_m["collection2"][item]["jcrew-mens-prices"]["text"].gsub(/[^\d\.]/, '').to_i
   student_price = retail_price * (1 - JCREW_DISCOUNT)
   saved = retail_price - student_price
-  number_to_currency(saved.to_i)
+  number_to_currency(saved.to_i, :precision => 0)
 end
 
 # WOMENS JCREW
 
 def jcrew_w_retail_price(item)
-  @jcrew_w["collection2"][item]["jcrew-womens-prices"]["text"]
+  retail_price = @jcrew_w["collection2"][item]["jcrew-womens-prices"]["text"].gsub(/[^\d\.]/, '').to_i
+  number_to_currency(retail_price.to_i, :precision => 0)
 end
 
 def jcrew_w_product_image(item)
@@ -214,20 +218,21 @@ end
 def jcrew_w_student_price(item)
   retail_price = @jcrew_w["collection2"][item]["jcrew-womens-prices"]["text"].gsub(/[^\d\.]/, '').to_i
   student_price = retail_price * (1 - JCREW_DISCOUNT)
-  number_to_currency(student_price.to_i)
+  number_to_currency(student_price.to_i, :precision => 0)
 end
 
 def jcrew_w_saved(item)
   retail_price = @jcrew_w["collection2"][item]["jcrew-womens-prices"]["text"].gsub(/[^\d\.]/, '').to_i
   student_price = retail_price * (1 - JCREW_DISCOUNT)
   saved = retail_price - student_price
-  number_to_currency(saved.to_i)
+  number_to_currency(saved.to_i, :precision => 0)
 end
 
 # WOMEN'S FAHERTY
 
 def faherty_w_retail_price(item)
-  @faherty_w[item]["faherty-womens-prices"]["text"]
+  retail_price = @faherty_w[item]["faherty-womens-prices"]["text"].gsub(/[^\d\.]/, '').to_i
+  number_to_currency(retail_price.to_i, :precision => 0)
 end
 
 def faherty_w_product_image(item)
@@ -241,20 +246,21 @@ end
 def faherty_w_student_price(item)
   retail_price = @faherty_w[item]["faherty-womens-prices"]["text"].gsub(/[^\d\.]/, '').to_i
   student_price = retail_price * (1 - FAHERTY_DISCOUNT)
-  number_to_currency(student_price.to_i)
+  number_to_currency(student_price.to_i, :precision => 0)
 end
 
 def faherty_w_saved(item)
   retail_price = @faherty_w[item]["faherty-womens-prices"]["text"].gsub(/[^\d\.]/, '').to_i
   student_price = retail_price * (1 - FAHERTY_DISCOUNT)
   saved = retail_price - student_price
-  number_to_currency(saved.to_i)
+  number_to_currency(saved.to_i, :precision => 0)
 end
 
 # MEN'S FAHERTY
 
 def faherty_m_retail_price(item)
-  @faherty_m[item]["faherty-mens-prices"]["text"]
+  retail_price = @faherty_m[item]["faherty-mens-prices"]["text"].gsub(/[^\d\.]/, '').to_i
+  number_to_currency(retail_price.to_i, :precision => 0)
 end
 
 def faherty_m_product_image(item)
@@ -268,14 +274,14 @@ end
 def faherty_m_student_price(item)
   retail_price = @faherty_m[item]["faherty-mens-prices"]["text"].gsub(/[^\d\.]/, '').to_i
   student_price = retail_price * (1 - FAHERTY_DISCOUNT)
-  number_to_currency(student_price.to_i)
+  number_to_currency(student_price.to_i, :precision => 0)
 end
 
 def faherty_m_saved(item)
   retail_price = @faherty_m[item]["faherty-mens-prices"]["text"].gsub(/[^\d\.]/, '').to_i
   student_price = retail_price * (1 - FAHERTY_DISCOUNT)
   saved = retail_price - student_price
-  number_to_currency(saved.to_i)
+  number_to_currency(saved.to_i, :precision => 0)
 end
 
 end

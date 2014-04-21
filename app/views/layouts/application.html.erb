@@ -7,14 +7,18 @@
   <%= csrf_meta_tags %>
   <%= analytics_init if Rails.env.production? %>
 </head>
+
+<header>
+  <img src= '/assets/logo_home.png' class="img-responsive" alt="Responsive image">
+</header>
+
 <body>
   <section id="studentshop">
     <%= yield %>
   </section>
 
   <footer id="info">
-    <p><%= link_to_unless_current "Home", root_path %></p>
-    <p>Written by Justin Belmont</a></p>
+    <p>Copyright Perkla, 2014</a></p>
   </footer> 
 </body>
 </html>

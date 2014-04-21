@@ -1,9 +1,9 @@
 $(document).ready(function(){
 
-$(function(){ 
+ $(function(){ 
   $(".mens").hide();
   $(".womens").hide();
-});
+ });
 
  $(".mennav").children("button").click(function(){
    $(".mens").toggle(1000);

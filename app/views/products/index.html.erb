@@ -64,9 +64,9 @@
     <p>Student Price: <%= @product.theory_w_student_price(@current) %></p>
     <p style="color:red"><i>You Save: <%= @product.theory_w_saved(@current) %></i></p>
     <p><b><%= @product.theory_w_product_title(@current) %></b></p>
-    <p><a href="http://www.perk.la/collections/perkla/products/converse" target="_blank">Get the Deal!</a></p>
+    <p><a href="http://www.perk.la/collections/perkla/products/theory-perkla" target="_blank">Get the Deal!</a></p>
 
-    <p><a href="http://www.perk.la/collections/perkla/products/converse" target="_blank"><img src ="<%= @product.theory_w_product_image(@current) %>" /></a></p>
+    <p><a href="http://www.perk.la/collections/perkla/products/theory-perkla" target="_blank"><img src ="<%= @product.theory_w_product_image(@current) %>" /></a></p>
   </div>
 
 
@@ -86,9 +86,103 @@
     <p>Student Price: <%= @product.theory_m_student_price(@current) %></p>
     <p style="color:red"><i>You Save: <%= @product.theory_m_saved(@current) %></i></p>
     <p><b><%= @product.theory_m_product_title(@current) %></b></p>
-    <p id="alertlink"><a href="http://www.perk.la/collections/perkla/products/converse" target="_blank">Get the Deal!</a></p>
+    <p id="alertlink"><a href="http://www.perk.la/collections/perkla/products/theory-perkla" target="_blank">Get the Deal!</a></p>
 
-    <p><a href="http://www.perk.la/collections/perkla/products/converse" target="_blank"><img src ="<%= @product.theory_m_product_image(@current) %>" /></a></p>
+    <p><a href="http://www.perk.la/collections/perkla/products/theory-perkla" target="_blank"><img src ="<%= @product.theory_m_product_image(@current) %>" /></a></p>
+  </div>
+
+
+<% @current += 1 %>
+<% end %>
+</div>
+</div>
+
+
+<div class="womens">
+
+<h2>Women's J.Crew:</h2>
+<% @current = 0 %>
+<div class="row">
+      <% 6.times do |current| %>
+  <div class="col-xs-6 col-sm-4" style="border: 2px solid black">
+
+    <p>Retail Price: <%= @product.jcrew_w_retail_price(@current) %></p>
+    <p>Student Price: <%= @product.jcrew_w_student_price(@current) %></p>
+    <p style="color:red"><i>You Save: <%= @product.jcrew_w_saved(@current) %></i></p>
+    <p><b><%= @product.jcrew_w_product_title(@current) %></b></p>
+    <p><a href="http://www.perk.la/collections/perkla/products/j-crew-perkla" target="_blank">Get the Deal!</a></p>
+
+    <p><a href="http://www.perk.la/collections/perkla/products/j-crew-perkla" target="_blank"><img src ="<%= @product.jcrew_w_product_image(@current) %>" /></a></p>
+  </div>
+
+
+<% @current += 1 %>
+<% end %>
+</div>
+</div>
+
+
+<div class="mens">
+
+<h2>Men's J.Crew:</h2>
+<% @current = 0 %>
+<div class="row">
+      <% 6.times do |current| %>
+  <div class="col-xs-6 col-sm-4" style="border: 2px solid black">
+
+    <p>Retail Price: <%= @product.jcrew_m_retail_price(@current) %></p>
+    <p>Student Price: <%= @product.jcrew_m_student_price(@current) %></p>
+    <p style="color:red"><i>You Save: <%= @product.jcrew_m_saved(@current) %></i></p>
+    <p><b><%= @product.jcrew_m_product_title(@current) %></b></p>
+    <p><a href="http://www.perk.la/collections/perkla/products/j-crew-perkla" target="_blank">Get the Deal!</a></p>
+
+    <p><a href="http://www.perk.la/collections/perkla/products/j-crew-perkla" target="_blank"><img src ="<%= @product.jcrew_m_product_image(@current) %>" /></a></p>
+  </div>
+
+
+<% @current += 1 %>
+<% end %>
+</div>
+</div>
+
+<div class="mens">
+
+<h2>Men's Faherty Brand:</h2>
+<% @current = 0 %>
+<div class="row">
+      <% 6.times do |current| %>
+  <div class="col-xs-6 col-sm-4" style="border: 2px solid black">
+
+    <p>Retail Price: <%= @product.faherty_m_retail_price(@current) %></p>
+    <p>Student Price: <%= @product.faherty_m_student_price(@current) %></p>
+    <p style="color:red"><i>You Save: <%= @product.faherty_m_saved(@current) %></i></p>
+    <p><b><%= @product.faherty_m_product_title(@current) %></b></p>
+    <p><a href="http://www.perk.la/collections/perkla/products/j-crew-perkla" target="_blank">Get the Deal!</a></p>
+
+    <p><a href="http://www.perk.la/collections/perkla/products/j-crew-perkla" target="_blank"><img src ="<%= @product.faherty_m_product_image(@current) %>" /></a></p>
+  </div>
+
+
+<% @current += 1 %>
+<% end %>
+</div>
+</div>
+
+<div class="womens">
+
+<h2>Women's Faherty Brand:</h2>
+<% @current = 0 %>
+<div class="row">
+      <% 6.times do |current| %>
+  <div class="col-xs-6 col-sm-4" style="border: 2px solid black">
+
+    <p>Retail Price: <%= @product.faherty_w_retail_price(@current) %></p>
+    <p>Student Price: <%= @product.faherty_w_student_price(@current) %></p>
+    <p style="color:red"><i>You Save: <%= @product.faherty_w_saved(@current) %></i></p>
+    <p><b><%= @product.faherty_w_product_title(@current) %></b></p>
+    <p><a href="http://www.perk.la/collections/perkla/products/j-crew-perkla" target="_blank">Get the Deal!</a></p>
+
+    <p><a href="http://www.perk.la/collections/perkla/products/j-crew-perkla" target="_blank"><img src ="<%= @product.faherty_w_product_image(@current) %>" /></a></p>
   </div>
 
 

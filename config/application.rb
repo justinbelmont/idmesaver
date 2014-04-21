@@ -1,6 +1,6 @@
 require File.expand_path('../boot', __FILE__)
 
-config.assets.initialize_on_precompile = false
+
 
 
 # Pick the frameworks you want:
@@ -19,6 +19,7 @@ Bundler.require(*Rails.groups)
 module Studentshop
   class Application < Rails::Application
     config.assets.precompile += %w( jquery )
+    config.assets.initialize_on_precompile = false
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

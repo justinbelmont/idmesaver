@@ -1,20 +1,26 @@
 <br/>
+
 <div id = "topnav">
   <p><img src= '/assets/newarrivals.jpg' class="img-responsive" alt="Responsive image"></p>
+</div>
+
 <div id = "subtitle">
   <p>Check out the latest products from our brand partners. <i>(And how much you save with Perkla)</i></p>
-</div>
+
   <div id ="mennav">
-    <button type="submit" class="btn btn-custom">MEN</button>
+    <img src= '/assets/latestbutton_m.png' class="img-responsive" alt="Responsive image">
   </div>
+
 
   <div id ="womennav">
-    <button type="submit" class="btn btn-custom">WOMEN</button>
+    <img src= '/assets/latestbutton_w.png' class="img-responsive" alt="Responsive image">
   </div>
-
+  
 </div>
 
 <br/>
+
+
 
 <div class ="mens">
 <h2><img src= '/assets/theory.png' class="img-responsive" alt="Responsive image"></h2>
@@ -209,4 +215,49 @@
 <% @current += 1 %>
 <% end %>
 </div>
+</div>
+
+<br/>
+<br/>
+<br/>
+<br/>
+
+<div id = "bottomnav">
+  <p><img src= '/assets/the_latest.jpg' class="img-responsive" alt="Responsive image"></p>
+</div>
+
+<div id = "latest-top">
+<center>
+<table>
+
+  <tr>
+    <td>
+    <p><a href="http://www.perk.la/collections/perkla/products/converse" target="_blank"><img src ="<%= @product.conversec_image(0) %>" class="img-responsive" alt="Responsive image" /></a></p>
+    </td>
+
+    <td>
+    <p><a href="http://www.perk.la/collections/perkla/products/faherty-brand-perkla" target="_blank"><img src ="<%= @product.fahertyc_image(0) %>" class="img-responsive" alt="Responsive image" /></a></p>
+    </td>
+  </tr>
+</table>
+</center>
+</div>
+
+<div id = "latest-bottom">
+  <center>
+  <table>
+  <tr>
+    <td>
+    <p><a href="http://www.perk.la/collections/perkla/products/theory-perkla" target="_blank"><img src ="<%= @product.theoryc_image(0) %>" class="img-responsive" alt="Responsive image" /></a></p>
+    </td>
+
+    <td>
+    <p><a href="http://www.perk.la/collections/perkla/products/j-crew-perkla" target="_blank"><img src ="<%= @product.jcrewc_image(3) %>" class="img-responsive" alt="Responsive image" /></a></p>
+    </td>
+
+  </tr>
+</table>
+</center>
+  <div>
+
 </div>

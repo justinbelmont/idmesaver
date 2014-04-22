@@ -5,12 +5,14 @@ $(document).ready(function(){
   $(".womens").hide();
  });
 
- $("#mennav").children("button").click(function(){
+ $("#mennav").children("img").click(function(){
+   $(".womens").hide();
    $(".mens").toggle(1000);
  });
 
 
- $("#womennav").children("button").click(function(){
+ $("#womennav").children("img").click(function(){
+   $(".mens").hide();
    $(".womens").toggle(1000);
  });
  

@@ -25,6 +25,12 @@ def initialize
   fahertywomen = RestClient.get 'http://www.kimonolabs.com/api/4nj9de08?apikey=85bcefb6f51d73a5223de8528c4fb2dc'
   fahertymen = RestClient.get 'http://www.kimonolabs.com/api/8be070ku?apikey=85bcefb6f51d73a5223de8528c4fb2dc'
 
+  conversecover = RestClient.get 'http://www.kimonolabs.com/api/8hgsxo4a?apikey=85bcefb6f51d73a5223de8528c4fb2dc'
+  jcrewcover = RestClient.get 'http://www.kimonolabs.com/api/dkn0vru6?apikey=85bcefb6f51d73a5223de8528c4fb2dc'
+  fahertycover = RestClient.get 'http://www.kimonolabs.com/api/3e4rgjes?apikey=85bcefb6f51d73a5223de8528c4fb2dc'
+  theorycover = RestClient.get 'http://www.kimonolabs.com/api/a490m1x6?apikey=85bcefb6f51d73a5223de8528c4fb2dc'
+
+
 #PARSE AND FORMAT ALL THE DATA
 #CONVERSE
   @parsed_conversemen = JSON.parse(conversemen)
@@ -32,6 +38,20 @@ def initialize
 
   @parsed_conversewomen = JSON.parse(conversewomen)
   @dataw = @parsed_conversewomen["results"]["collection1"]
+
+
+# COVER IMAGES
+  @parsed_conversecover = JSON.parse(conversecover)
+  @conversec = @parsed_conversecover["results"]["collection1"]
+
+  @parsed_jcrewcover = JSON.parse(jcrewcover)
+  @jcrewc = @parsed_jcrewcover["results"]["collection1"]
+
+  @parsed_fahertycover = JSON.parse(fahertycover)
+  @fahertyc = @parsed_fahertycover["results"]["collection1"]
+
+  @parsed_theorycover = JSON.parse(theorycover)
+  @theoryc = @parsed_theorycover["results"]["collection1"]
 
 #THEORY
   @parsed_theory_w = JSON.parse(theorywomen)
@@ -282,6 +302,24 @@ def faherty_m_saved(item)
   student_price = retail_price * (1 - FAHERTY_DISCOUNT)
   saved = retail_price - student_price
   number_to_currency(saved.to_i, :precision => 0)
+end
+
+# COVER PICTURES
+
+def conversec_image(item)
+  @conversec[item]["conversecover"]["src"]
+end
+
+def jcrewc_image(item)
+  @jcrewc[item]["jcrew-cover"]["src"]
+end
+
+def fahertyc_image(item)
+  @fahertyc[item]["faherty_cover"]["src"]
+end
+
+def theoryc_image(item)
+  @theoryc[item]["theory_cover"]["src"]
 end
 
 end

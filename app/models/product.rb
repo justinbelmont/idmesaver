@@ -223,7 +223,7 @@ end
 # WOMENS JCREW
 
 def jcrew_w_retail_price(item)
-  retail_price = @jcrew_w["collection2"][item]["jcrew-womens-prices"]["text"].gsub(/[^\d\.]/, '').to_i
+  retail_price = @jcrew_w["collection1"][item]["jcrew-womens-prices"]["text"].gsub(/[^\d\.]/, '').to_i
   number_to_currency(retail_price.to_i, :precision => 0)
 end
 

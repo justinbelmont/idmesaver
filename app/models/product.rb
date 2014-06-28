@@ -192,7 +192,7 @@ def theory_w_saved(item)
   number_to_currency(saved.to_i, :precision => 0)
 end
 
-# MENS JCREW
+# MENS JCREW - ELIMATED FROM VIEW AS JCREW JSON IS RETURNING NIL
 
 def jcrew_m_retail_price(item)
   retail_price = @jcrew_m["collection2"][item]["jcrew-mens-prices"]["text"].gsub(/[^\d\.]/, '').to_i
@@ -220,7 +220,7 @@ def jcrew_m_saved(item)
   number_to_currency(saved.to_i, :precision => 0)
 end
 
-# WOMENS JCREW
+# WOMENS JCREW - ELIMATED FROM VIEW AS JCREW JSON IS RETURNING NIL
 
 def jcrew_w_retail_price(item)
   retail_price = @jcrew_w["collection1"][item]["jcrew-womens-prices"]["text"].gsub(/[^\d\.]/, '').to_i

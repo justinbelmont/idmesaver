@@ -45,31 +45,6 @@
 
 </div>
 
-<div class="mens">
-
-<h2><img src= '/assets/jcrew.png' class="img-responsive" alt="Responsive image"></h2>
-<% @current = 0 %>
-<div class="row">
-      <% 6.times do |current| %>
-  <div class="col-xs-6 col-sm-4">
-    <p><a href="http://www.perk.la/collections/perkla/products/j-crew-perkla" target="_blank"><img src ="<%= @product.jcrew_m_product_image(@current) %>" /></a></p>
-    <p><b><%= @product.jcrew_m_product_title(@current) %></b></p>    
-    <p>Retail Price: <%= @product.jcrew_m_retail_price(@current) %></p>
-    <p1>Perkla Price: <%= @product.jcrew_m_student_price(@current) %></p1>
-    <p><i>You Save: <%= @product.jcrew_m_saved(@current) %></i></p>
-
-    <p><button type="button" class="btn btn-primary btn-xs"><a href="http://www.perk.la/collections/perkla/products/j-crew-perkla" target="_blank">Get the Deal</a></button></p>
-
-
-  </div>
-
-
-<% @current += 1 %>
-<% end %>
-</div>
-</div>
-
-
 
 <div class ="mens">
 <div class="conversem">

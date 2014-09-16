@@ -34,6 +34,8 @@ def initialize
 
   columbiacover = RestClient.get 'https://www.kimonolabs.com/api/70g9dqd6?apikey=85bcefb6f51d73a5223de8528c4fb2dc'
 
+  dellcover = RestClient.get 'https://www.kimonolabs.com/api/dzwg9phi?apikey=85bcefb6f51d73a5223de8528c4fb2dc'
+
 #PARSE AND FORMAT ALL THE DATA
 #CONVERSE
   @parsed_conversemen = JSON.parse(conversemen)
@@ -61,6 +63,9 @@ def initialize
 
   @parsed_columbiacover = JSON.parse(columbiacover)
   @columbiac = @parsed_columbiacover["results"]["collection1"]
+
+  @parsed_dellcover = JSON.parse(dellcover)
+  @dellc = @parsed_dellcover["results"]["collection1"]
 
 #THEORY
   @parsed_theory_w = JSON.parse(theorywomen)
@@ -337,6 +342,10 @@ end
 
 def columbiac_image(item)
   @columbiac[item]["columbia-cover"]["src"]
+end
+
+def dellc_image(item)
+  @dellc[item]["dell-cover"]["src"]
 end
 
 end

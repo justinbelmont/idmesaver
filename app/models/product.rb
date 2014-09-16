@@ -30,6 +30,7 @@ def initialize
   fahertycover = RestClient.get 'http://www.kimonolabs.com/api/3e4rgjes?apikey=85bcefb6f51d73a5223de8528c4fb2dc'
   theorycover = RestClient.get 'http://www.kimonolabs.com/api/a490m1x6?apikey=85bcefb6f51d73a5223de8528c4fb2dc'
 
+  uacover = RestClient.get 'https://www.kimonolabs.com/api/bglsnu9m?apikey=85bcefb6f51d73a5223de8528c4fb2dc'
 
 #PARSE AND FORMAT ALL THE DATA
 #CONVERSE
@@ -52,6 +53,9 @@ def initialize
 
   @parsed_theorycover = JSON.parse(theorycover)
   @theoryc = @parsed_theorycover["results"]["collection1"]
+
+  @parsed_uacover = JSON.parse(uacover)
+  @uac = @parsed_uacover["results"]["collection1"]
 
 #THEORY
   @parsed_theory_w = JSON.parse(theorywomen)
@@ -320,6 +324,10 @@ end
 
 def theoryc_image(item)
   @theoryc[item]["theory_cover"]["src"]
+end
+
+def uac_image(item)
+  @uac[item]["ua-cover"]["src"]
 end
 
 end

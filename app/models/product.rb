@@ -32,6 +32,8 @@ def initialize
 
   uacover = RestClient.get 'https://www.kimonolabs.com/api/bglsnu9m?apikey=85bcefb6f51d73a5223de8528c4fb2dc'
 
+  columbiacover = RestClient.get 'https://www.kimonolabs.com/api/70g9dqd6?apikey=85bcefb6f51d73a5223de8528c4fb2dc'
+
 #PARSE AND FORMAT ALL THE DATA
 #CONVERSE
   @parsed_conversemen = JSON.parse(conversemen)
@@ -56,6 +58,9 @@ def initialize
 
   @parsed_uacover = JSON.parse(uacover)
   @uac = @parsed_uacover["results"]["collection1"]
+
+  @parsed_columbiacover = JSON.parse(columbiacover)
+  @columbiac = @parsed_columbiacover["results"]["collection1"]
 
 #THEORY
   @parsed_theory_w = JSON.parse(theorywomen)
@@ -328,6 +333,10 @@ end
 
 def uac_image(item)
   @uac[item]["ua-cover"]["src"]
+end
+
+def columbiac_image(item)
+  @columbiac[item]["columbia-cover"]["src"]
 end
 
 end
